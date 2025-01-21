@@ -1,17 +1,18 @@
 USE Examination_System;
 
-INSERT INTO Branch (B_id, B_name, City, ZIP_Code, Street, B_Phone) 
+INSERT INTO Branch (B_id, B_name, City, ZIP_Code, Street, B_Phone, Mgr_Name, Mgr_Phone, Mgr_Selected_Date)
 VALUES
-(1, 'ITI Smart Village', 'Giza', '12577', 'Smart Village', '02-35355678'),
-(2, 'ITI Alexandria', 'Alexandria', '21615', 'Al Smoha', '03-4242433'),
-(3, 'ITI Mansoura', 'Mansoura', '35511', 'Mansoura Center', '050-2266412'),
-(4, 'ITI Ismailia', 'Ismailia', '41522', 'Technology Zone', '064-3487552'),
-(5, 'ITI Assiut', 'Assiut', '71515', 'Assiut Technology Park', '088-2456783'),
-(6, 'ITI Sohag', 'Sohag', '82515', 'Sohag Technology Zone', '093-2267345'),
-(7, 'ITI Aswan', 'Aswan', '81511', 'Aswan Innovation Hub', '097-2345678'),
-(8, 'ITI Port Said', 'Port Said', '42511', 'Port Said Tech Park', '066-3546789'),
-(9, 'ITI Zagazig', 'Zagazig', '44515', 'Zagazig Campus', '055-2234567'),
-(10, 'ITI Fayoum', 'Fayoum', '63511', 'Fayoum Technology Center', '084-2245678');
+(1, 'ITI Smart Village', 'Giza', 12577, 'Smart Village', '02-35355678', 'Ahmed Ali', '010-1234567', '2022-01-15'),
+(2, 'ITI Alexandria', 'Alexandria', 21615, 'Al Smoha', '03-4242433', 'Mona Khaled', '011-2345678', '2022-03-01'),
+(3, 'ITI Mansoura', 'Mansoura', 35511, 'Mansoura Center', '050-2266412', 'Tamer Mostafa', '012-3456789', '2021-12-10'),
+(4, 'ITI Ismailia', 'Ismailia', 41522, 'Technology Zone', '064-3487552', 'Sara Mahmoud', '013-4567890', '2022-04-20'),
+(5, 'ITI Assiut', 'Assiut', 71515, 'Assiut Technology', '088-2456783', 'Youssef Hany', '014-5678901', '2022-05-25'),
+(6, 'ITI Sohag', 'Sohag', 82515, 'Sohag Technology', '093-2267345', 'Nada Hassan', '015-6789012', '2022-06-30'),
+(7, 'ITI Aswan', 'Aswan', 42511, 'Aswan Innovation', '097-2345678', 'Omar Reda', '016-7890123', '2021-11-18'),
+(8, 'ITI Port Said', 'Port Said', 42511, 'Port Said Technology', '066-3456789', 'Mai Sami', '017-8901234', '2021-09-22'),
+(9, 'ITI Zagazig', 'Zagazig', 44515, 'Zagazig Campus', '055-2234567', 'Hesham Ibrahim', '018-9012345', '2022-02-14'),
+(10, 'ITI Fayoum', 'Fayoum', 63511, 'Fayoum Technology', '084-2245678', 'Laila Khalil', '019-0123456', '2021-08-05');
+
 
 
 INSERT INTO Instructor (Ins_id, Ins_Fname, Ins_Lname, City, Street, Phone, Email, Password, Salary, Promotion_Date, Gender)

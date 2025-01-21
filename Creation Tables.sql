@@ -14,7 +14,10 @@ CREATE TABLE Branch (
     City VARCHAR(100) NOT NULL,
     ZIP_Code VARCHAR(20),
     Street VARCHAR(255), 
-    B_Phone VARCHAR(20) 
+    B_Phone VARCHAR(20) ,
+	Mgr_Name  VARCHAR(20) ,
+	Mgr_Phone  VARCHAR(20),
+	Mgr_Selected_Date DATE
 );
 CREATE TABLE Instructor (
     Ins_id INT PRIMARY KEY,
