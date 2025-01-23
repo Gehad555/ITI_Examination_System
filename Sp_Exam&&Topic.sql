@@ -1,8 +1,4 @@
 ﻿/*start topic*/
-Create table Topic (
- Top_id int primary key,
- Top_name varchar(20)
-);
 --select operation
 IF OBJECT_ID('GetTopicById_SP','P') IS NOT NULL
 		DROP PROCEDURE GetTopicById_SP;
