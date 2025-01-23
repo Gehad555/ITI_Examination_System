@@ -4,6 +4,9 @@ Create table Topic (
  Top_name varchar(20)
 );
 --select operation
+IF OBJECT_ID('GetTopicById_SP','P') IS NOT NULL
+		DROP PROCEDURE GetTopicById_SP;
+Go
 Create Procedure GetTopicById_SP
     @Top_Id int
 AS
@@ -16,7 +19,11 @@ BEGIN
         select 'An error occurred: ' + ERROR_MESSAGE() AS Msg;      
     END CATCH
 END;
+Go
 --insert operation
+IF OBJECT_ID('InsertTopic_Sp','P') IS NOT NULL
+		DROP PROCEDURE InsertTopic_Sp;
+Go
 create procedure InsertTopic_Sp
     @Top_Id INT,        
     @TName VARCHAR(20),      
@@ -34,7 +41,11 @@ BEGIN
         Select 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
+GO
 --update operation
+IF OBJECT_ID('UpdateTopic_Sp','P') IS NOT NULL
+		DROP PROCEDURE UpdateTopic_Sp;
+Go
 Create Procedure UpdateTopic_Sp
     @Top_Id INT,        
     @TName VARCHAR(20),                        
@@ -54,7 +65,11 @@ BEGIN
         SELECT 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
+GO
 --delete operation
+IF OBJECT_ID('DeleteTopic_Sp','P') IS NOT NULL
+		DROP PROCEDURE DeleteTopic_Sp;
+Go
 Create procedure DeleteTopic_Sp
     @Top_Id INT              
 AS
@@ -70,11 +85,15 @@ BEGIN
         SELECT 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
+Go
 /*end topic*/
 
 
 /*Delete Operation */
 -- Create Procedure to delete data from the Exam table
+IF OBJECT_ID('DeleteExam_Sp','P') IS NOT NULL
+		DROP PROCEDURE DeleteExam_Sp;
+Go
 Create procedure DeleteExam_Sp
     @Ex_Id INT              
 AS
@@ -90,8 +109,11 @@ BEGIN
         SELECT 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
-
+Go
 -- Create Procedure to delete data from the Std_Exam table
+IF OBJECT_ID('DeleteStdExam_Sp','P') IS NOT NULL
+		DROP PROCEDURE DeleteStdExam_Sp;
+Go
 Create Procedure DeleteStdExam_Sp
     @SID INT,               
     @Ex_ID INT              
@@ -108,7 +130,11 @@ BEGIN
         SELECT 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
+GO
 -- Create Procedure to delete data from the Exam_Attendance table
+IF OBJECT_ID('DeleteExamAttendance_Sp','P') IS NOT NULL
+		DROP PROCEDURE DeleteExamAttendance_Sp;
+Go
 Create Procedure DeleteExamAttendance_Sp
     @S_id INT,              
     @C_id INT,          
@@ -126,10 +152,13 @@ BEGIN
         SELECT 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
-
+Go
 
 /*Update Operation*/
 -- Create Procedure to update an existing record in the Exam table
+IF OBJECT_ID('UpdateExam_Sp','P') IS NOT NULL
+		DROP PROCEDURE UpdateExam_Sp;
+Go
 Create Procedure UpdateExam_Sp
     @Ex_Id INT,             
     @EName VARCHAR(255),    
@@ -159,8 +188,11 @@ BEGIN
         SELECT 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
-
+GO
 -- Create Procedure to update a student's exam record in the Std_Exam table
+IF OBJECT_ID('UpdateStdExam_Sp','P') IS NOT NULL
+		DROP PROCEDURE UpdateStdExam_Sp;
+Go
 Create Procedure UpdateStdExam_Sp
     @SID INT,             
     @Ex_ID INT,              
@@ -185,8 +217,11 @@ BEGIN
         SELECT 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
-
+GO
 -- Create Procedure to update the Exam Attendance record in the Exam_Attendance table
+IF OBJECT_ID('UpdateExamAttendance_Sp','P') IS NOT NULL
+		DROP PROCEDURE UpdateExamAttendance_Sp;
+Go
 Create Procedure UpdateExamAttendance_Sp
     @S_id INT,              
     @C_id INT,              
@@ -209,10 +244,13 @@ BEGIN
         SELECT 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
-
+GO
 /*Insert Operation*/
 
 -- This stored procedure inserts a record into the Exam_Attendance table.
+IF OBJECT_ID('InsertExamAttendance_Sp','P') IS NOT NULL
+		DROP PROCEDURE InsertExamAttendance_Sp;
+Go
 create Procedure InsertExamAttendance_Sp
     @S_id int,   
     @C_id int,    
@@ -231,8 +269,11 @@ BEGIN
         Select 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
-
+GO
 -- It requires the Student ID (@SID), Exam ID (@Ex_ID), Grade, Date, and Duration.
+IF OBJECT_ID('InsertStdExam_Sp','P') IS NOT NULL
+		DROP PROCEDURE InsertStdExam_Sp;
+Go
 Create Procedure InsertStdExam_Sp
     @SID int,       
     @Ex_ID int,      
@@ -253,7 +294,11 @@ BEGIN
         Select 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
+GO
 -- Creating a stored procedure to insert a new exam into the Exam table
+IF OBJECT_ID('InsertExam_Sp','P') IS NOT NULL
+		DROP PROCEDURE InsertExam_Sp;
+Go
 create procedure InsertExam_Sp
     @Ex_Id INT,        
     @EName VARCHAR(255),
@@ -276,10 +321,13 @@ BEGIN
         Select 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
-
+GO
 /*Select Operation*/
 
 -- It filters based on the Student ID (@S_id), Course ID (@C_id), and Exam ID (@Ex_id).
+IF OBJECT_ID('GetExamAttendance_Sp','P') IS NOT NULL
+		DROP PROCEDURE GetExamAttendance_Sp;
+Go
 Create Procedure GetExamAttendance_Sp
     @S_id int,    
     @C_id int,  
@@ -294,8 +342,11 @@ BEGIN
         select 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
-
+GO
 -- It filters based on the Student ID (@p_SID) and Exam ID (@p_Ex_ID).
+IF OBJECT_ID('GetStdExam_Sp','P') IS NOT NULL
+		DROP PROCEDURE GetStdExam_Sp;
+Go
 Create Procedure GetStdExam_Sp
      @p_SID int ,    
      @p_Ex_ID int     
@@ -309,8 +360,11 @@ BEGIN
         select 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
-
+GO
 -- It filters based on the Exam ID (@Ex_Id).
+IF OBJECT_ID('GetExamById_SP','P') IS NOT NULL
+		DROP PROCEDURE GetExamById_SP;
+Go
 Create Procedure GetExamById_SP
     @Ex_Id int
 AS
@@ -323,3 +377,4 @@ BEGIN
         select 'An error occurred: ' + ERROR_MESSAGE() AS Msg;      
     END CATCH
 END;
+GO
