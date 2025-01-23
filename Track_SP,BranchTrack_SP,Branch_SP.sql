@@ -1,5 +1,6 @@
 -- Stored Procedure for CRUD Operations on the 'Branch' Table
 Use Examination_System;
+
 --check if the procedure exists , then drop it
 if OBJECT_ID('InsertBranch_SP','p') IS NOT NULL
 	Drop Procedure InsertBranch_SP;
