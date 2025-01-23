@@ -278,3 +278,31 @@ BEGIN
         THROW;
     END CATCH;
 END;
+
+-- Stored Procedure for Update Operation on the 'BranchTrack' Table
+
+IF OBJECT_ID('UpdateBranchTrack_SP', 'P') IS NOT NULL
+    DROP PROCEDURE UpdateBranchTrack_SP;
+
+GO
+
+-- Update a BranchTrack
+CREATE PROCEDURE UpdateBranchTrack_SP
+    @B_id INT,
+    @T_id INT,
+    @New_B_id INT,
+    @New_T_id INT
+AS
+BEGIN
+    BEGIN TRY
+        UPDATE BranchTrack
+        SET B_id = @New_B_id,
+            T_id = @New_T_id
+        WHERE B_id = @B_id AND T_id = @T_id;
+    END TRY
+    BEGIN CATCH
+        PRINT 'An error occurred during the update in BranchTrack!';
+        THROW;
+    END CATCH;
+END;
+GO
