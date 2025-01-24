@@ -207,8 +207,8 @@ GO
 -- Stored Procedure for Update Operation on the 'UpdateCourse' Table
 --check if the procedure exists , then drop it
 GO
-if OBJECT_ID('UpdateTrackCourseContain_SP','p') IS NOT NULL
-	Drop Procedure UpdateTrackCourseContain_SP;
+if OBJECT_ID('UpdateCourse','p') IS NOT NULL
+	Drop Procedure UpdateCourse;
 
 GO
 CREATE PROCEDURE UpdateCourse
@@ -269,8 +269,8 @@ GO
 --check if the procedure exists , then drop it
 
 GO
-if OBJECT_ID('UpdateTrackCourseContain_SP','p') IS NOT NULL
-	Drop Procedure UpdateTrackCourseContain_SP;
+if OBJECT_ID('UpdateStudent','p') IS NOT NULL
+	Drop Procedure UpdateStudent;
 
 GO
 CREATE PROCEDURE UpdateStudent
