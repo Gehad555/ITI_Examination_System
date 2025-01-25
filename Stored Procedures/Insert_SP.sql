@@ -1,13 +1,10 @@
 USE Examination_System
--- INSERT Stored Procedure on the 'Branch' Table
+-- Table: Branch
 --1
---check if the procedure exists , then drop it
-if OBJECT_ID('InsertBranch_SP','p') IS NOT NULL
-	Drop Procedure InsertBranch_SP;
-
+IF OBJECT_ID('InsertBranch_SP','p') IS NOT NULL
+    DROP PROCEDURE InsertBranch_SP;
 GO
 -- Create (Insert) a new Branch
-
 CREATE PROCEDURE InsertBranch_SP
     @B_id INT,
     @B_name VARCHAR(255),
@@ -30,16 +27,13 @@ BEGIN
     END CATCH;
 END;
 
-
+-- Table: BranchTrack
 --2
 GO
---check if the procedure exists , then drop it
-if OBJECT_ID('InsertBranchTrack_SP','p') IS NOT NULL
-	Drop Procedure InsertBranchTrack_SP;
-
+IF OBJECT_ID('InsertBranchTrack_SP','p') IS NOT NULL
+    DROP PROCEDURE InsertBranchTrack_SP;
 GO
 -- Create (Insert) a new BranchTrack
-
 CREATE PROCEDURE InsertBranchTrack_SP
     @B_id INT,
     @T_id INT
@@ -55,17 +49,13 @@ BEGIN
     END CATCH;
 END;
 
-
-
+-- Table: Track
 --3
 GO
---check if the procedure exists , then drop it
-if OBJECT_ID('InsertTrack_SP','p') IS NOT NULL
-	Drop Procedure InsertTrack_SP;
-
+IF OBJECT_ID('InsertTrack_SP','p') IS NOT NULL
+    DROP PROCEDURE InsertTrack_SP;
 GO
 -- Create (Insert) a new Track
-
 CREATE PROCEDURE InsertTrack_SP
     @T_id INT,
     @T_Name VARCHAR(255),
@@ -82,40 +72,33 @@ BEGIN
     END CATCH;
 END;
 
-
-
---Stored Procedures of:(Ins_Track, Instructor, Track_Course_Contain)
+-- Table: Ins_Track
 --4
---Ins_Track:
---check if the procedure exists , then drop it
-if OBJECT_ID('InsertIns_Track_SP','p') IS NOT NULL
-	Drop Procedure InsertIns_Track_SP;
-
+GO
+IF OBJECT_ID('InsertIns_Track_SP','p') IS NOT NULL
+    DROP PROCEDURE InsertIns_Track_SP;
 GO
 CREATE PROCEDURE InsertIns_Track_SP
     @Iid INT,
     @Tid INT,
-    @hire date
+    @hire DATE
 AS
 BEGIN
-	begin try 
-    INSERT INTO Ins_Track (Ins_id,T_id,HireDate)
-    VALUES (@Iid, @Tid, @hire);
-	end try
-	begin catch 
-	print 'an error occured during insertion to Ins_Track table'
-	end catch;
+    BEGIN TRY 
+        INSERT INTO Ins_Track (Ins_id,T_id,HireDate)
+        VALUES (@Iid, @Tid, @hire);
+    END TRY
+    BEGIN CATCH 
+        PRINT 'An error occurred during insertion to Ins_Track table';
+    END CATCH;
 END;
 
-
---Instructor
-GO
---check if the procedure exists , then drop it
-if OBJECT_ID('InsertInstructor_SP','p') IS NOT NULL
-	Drop Procedure InsertInstructor_SP;
-
-GO
+-- Table: Instructor
 --5
+GO
+IF OBJECT_ID('InsertInstructor_SP','p') IS NOT NULL
+    DROP PROCEDURE InsertInstructor_SP;
+GO
 CREATE PROCEDURE InsertInstructor_SP
     @Ins_id INT,
     @Ins_Fname VARCHAR(100),
@@ -133,7 +116,6 @@ BEGIN
     BEGIN TRY
         INSERT INTO Instructor (Ins_id, Ins_Fname, Ins_Lname, City, Street, Phone, Email, Password, Salary, Promotion_Date, Gender)
         VALUES (@Ins_id, @Ins_Fname, @Ins_Lname, @City, @Street, @Phone, @Email, @Password, @Salary, @Promotion_Date, @Gender);
-
         PRINT 'Instructor inserted successfully.';
     END TRY
     BEGIN CATCH
@@ -142,15 +124,12 @@ BEGIN
     END CATCH;
 END;
 
+-- Table: Track_Course_Contain
 --6
---TrackCourseContain
 GO
---check if the procedure exists , then drop it
-if OBJECT_ID('InsertTrackCourseContain_SP','p') IS NOT NULL
-	Drop Procedure InsertTrackCourseContain_SP;
-
+IF OBJECT_ID('InsertTrackCourseContain_SP','p') IS NOT NULL
+    DROP PROCEDURE InsertTrackCourseContain_SP;
 GO
---3-Track_Course_Contain
 CREATE PROCEDURE InsertTrackCourseContain_SP
     @C_id INT,
     @T_id INT
@@ -167,12 +146,11 @@ BEGIN
     END CATCH;
 END;
 
-
-
+-- Table: Course
 --7
 GO
-if OBJECT_ID('InsertCourse_SP','p') IS NOT NULL
-	Drop Procedure InsertCourse_SP;
+IF OBJECT_ID('InsertCourse_SP','p') IS NOT NULL
+    DROP PROCEDURE InsertCourse_SP;
 GO
 CREATE PROCEDURE InsertCourse_SP
     @C_id INT,
@@ -193,36 +171,33 @@ BEGIN
     END
 END;
 
-
+-- Table: Topic
 --8
-Go
---insert operation
+GO
 IF OBJECT_ID('InsertTopic_Sp','P') IS NOT NULL
-		DROP PROCEDURE InsertTopic_Sp;
-Go
-create procedure InsertTopic_Sp
+    DROP PROCEDURE InsertTopic_Sp;
+GO
+CREATE PROCEDURE InsertTopic_Sp
     @Top_Id INT,        
-    @TName VARCHAR(20),      
+    @TName VARCHAR(100)      
 AS
 BEGIN
     BEGIN TRY          
-        Insert Into Topic (Top_id, Top_name)
-        Values (@Top_Id, @TName);        
-		IF @@ROWCOUNT > 0
-			SELECT 'Data inserted successfully into topic' AS Msg;
-		ELSE
-			SELECT 'Insert operation failed. No rows affected.' AS Msg;
+        INSERT INTO Topic (Top_id, Top_name)
+        VALUES (@Top_Id, @TName);        
+        IF @@ROWCOUNT > 0
+            SELECT 'Data inserted successfully into topic' AS Msg;
     END TRY
     BEGIN CATCH                
-        Select 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
+        SELECT 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
-GO
 
+-- Table: Enroll_Crs_Std
 --9
 GO
-if OBJECT_ID('InsertEnrollment_SP','p') IS NOT NULL
-	Drop Procedure InsertEnrollment_SP;
+IF OBJECT_ID('InsertEnrollment_SP','p') IS NOT NULL
+    DROP PROCEDURE InsertEnrollment_SP;
 GO
 CREATE PROCEDURE InsertEnrollment_SP
     @C_id INT,
@@ -241,10 +216,11 @@ BEGIN
     END
 END;
 
+-- Table: Student
 --10
 GO
-if OBJECT_ID('InsertStudent_SP','p') IS NOT NULL
-	Drop Procedure InsertStudent_SP;
+IF OBJECT_ID('InsertStudent_SP','p') IS NOT NULL
+    DROP PROCEDURE InsertStudent_SP;
 GO
 CREATE PROCEDURE InsertStudent_SP
     @S_id INT,
@@ -274,67 +250,61 @@ BEGIN
     END
 END;
 
+-- Table: Std_Exam
 --11
 GO
--- It requires the Student ID (@SID), Exam ID (@Ex_ID), Grade, Date, and Duration.
 IF OBJECT_ID('InsertStdExam_Sp','P') IS NOT NULL
-		DROP PROCEDURE InsertStdExam_Sp;
-Go
-Create Procedure InsertStdExam_Sp
-    @SID int,       
-    @Ex_ID int,      
-    @Grade varchar(10),  
-    @Date date,      
-    @Duration int    
+    DROP PROCEDURE InsertStdExam_Sp;
+GO
+CREATE PROCEDURE InsertStdExam_Sp
+    @SID INT,       
+    @Ex_ID INT,      
+    @Grade VARCHAR(10),  
+    @Date DATE,      
+    @Duration INT    
 AS
 BEGIN
     BEGIN TRY    
-        Insert Into Std_Exam (SID, Ex_ID, Grade, Date, Duration)
-        Values (@SID, @Ex_ID, @Grade, @Date, @Duration);             
-		IF @@ROWCOUNT > 0
-			SELECT 'Data inserted successfully into Std_Exam' AS Msg;
-		ELSE
-			SELECT 'Insert operation failed. No rows affected.' AS Msg;
+        INSERT INTO Std_Exam (SID, Ex_ID, Grade, Date, Duration)
+        VALUES (@SID, @Ex_ID, @Grade, @Date, @Duration);             
+        IF @@ROWCOUNT > 0
+            SELECT 'Data inserted successfully into Std_Exam' AS Msg;
     END TRY
     BEGIN CATCH                
-        Select 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
+        SELECT 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
 
-
+-- Table: Exam_Attendance
 --12
 GO
--- This stored procedure inserts a record into the Exam_Attendance table.
 IF OBJECT_ID('InsertExamAttendance_Sp','P') IS NOT NULL
-		DROP PROCEDURE InsertExamAttendance_Sp;
-Go
-create Procedure InsertExamAttendance_Sp
-    @S_id int,   
-    @C_id int,    
-    @Ex_id int  
+    DROP PROCEDURE InsertExamAttendance_Sp;
+GO
+CREATE PROCEDURE InsertExamAttendance_Sp
+    @S_id INT,   
+    @C_id INT,    
+    @Ex_id INT  
 AS
 BEGIN
     BEGIN TRY        
-        insert into Exam_Attendance (S_id, C_id, Ex_id)
-        Values (@S_id, @C_id, @Ex_id);      
-		IF @@ROWCOUNT > 0
-			SELECT 'Data inserted successfully into Exam_Attendance' AS Msg;
-		ELSE
-			SELECT 'Insert operation failed. No rows affected.' AS Msg;
+        INSERT INTO Exam_Attendance (S_id, C_id, Ex_id)
+        VALUES (@S_id, @C_id, @Ex_id);      
+        IF @@ROWCOUNT > 0
+            SELECT 'Data inserted successfully into Exam_Attendance' AS Msg;
     END TRY
     BEGIN CATCH        
-        Select 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
+        SELECT 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
-GO
 
+-- Table: Exam
 --13
 GO
--- Creating a stored procedure to insert a new exam into the Exam table
 IF OBJECT_ID('InsertExam_Sp','P') IS NOT NULL
-		DROP PROCEDURE InsertExam_Sp;
-Go
-create procedure InsertExam_Sp
+    DROP PROCEDURE InsertExam_Sp;
+GO
+CREATE PROCEDURE InsertExam_Sp
     @Ex_Id INT,        
     @EName VARCHAR(255),
     @No_MCQ INT,       
@@ -345,23 +315,19 @@ create procedure InsertExam_Sp
 AS
 BEGIN
     BEGIN TRY          
-        Insert Into Exam (Ex_Id, EName, No_MCQ, No_TF, Fk_CID, Start_Time, Duration)
-        Values (@Ex_Id, @EName, @No_MCQ, @No_TF, @Fk_CID, @Start_Time, @Duration);        
-		IF @@ROWCOUNT > 0
-			SELECT 'Data inserted successfully into Exam' AS Msg;
-		ELSE
-			SELECT 'Insert operation failed. No rows affected.' AS Msg;
+        INSERT INTO Exam (Ex_Id, EName, No_MCQ, No_TF, Fk_CID, Start_Time, Duration)
+        VALUES (@Ex_Id, @EName, @No_MCQ, @No_TF, @Fk_CID, @Start_Time, @Duration);        
+        IF @@ROWCOUNT > 0
+            SELECT 'Data inserted successfully into Exam' AS Msg;
     END TRY
     BEGIN CATCH                
-        Select 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
+        SELECT 'An error occurred: ' + ERROR_MESSAGE() AS Msg;        
     END CATCH
 END;
-GO
 
-
+-- Table: ExamQuestion
 --14
 GO
--- Check if the procedure exists, then drop it
 IF OBJECT_ID('InsertExamQuestion_SP', 'P') IS NOT NULL
     DROP PROCEDURE InsertExamQuestion_SP;
 GO
@@ -380,11 +346,10 @@ BEGIN
         PRINT 'An error occurred while inserting the record';
     END CATCH
 END;
-GO
 
+-- Table: Question
 --15
 GO
--- Check if the procedure exists, then drop it
 IF OBJECT_ID('InsertQuestion_SP', 'P') IS NOT NULL
     DROP PROCEDURE InsertQuestion_SP;
 GO
@@ -397,7 +362,7 @@ CREATE PROCEDURE InsertQuestion_SP
 AS
 BEGIN
     BEGIN TRY
-        INSERT INTO Question (Q_id,Body, CorrectAns, Type, Grade)
+        INSERT INTO Question (Q_id, Body, CorrectAns, Type, Grade)
         VALUES (@Q_id, @Body, @CorrectAns, @Type, @Grade);
         PRINT 'Record inserted successfully';
     END TRY
@@ -405,11 +370,10 @@ BEGIN
         PRINT 'An error occurred while inserting the record';
     END CATCH
 END;
-GO
 
+-- Table: Choices
 --16
 GO
--- Check if the procedure exists, then drop it
 IF OBJECT_ID('InsertChoice_SP', 'P') IS NOT NULL
     DROP PROCEDURE InsertChoice_SP;
 GO
@@ -428,4 +392,3 @@ BEGIN
         PRINT 'An error occurred while inserting the record';
     END CATCH
 END;
-GO
