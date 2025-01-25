@@ -11,6 +11,7 @@ BEGIN
     SELECT Q.Grade, EQ.Std_Answer, Q.CorrectAns
     FROM ExamQuestion EQ
     INNER JOIN Question Q ON EQ.Q_id = Q.Q_id
+	INNER JOIN Std_Exam SE ON SE.Ex_ID = EQ.Ex_Id AND SE.SID = @StudentID
     WHERE EQ.Ex_Id = @ExamID;
 
     DECLARE @Grade DECIMAL(5, 2);
