@@ -106,6 +106,21 @@ VALUES
 (9, 30, 'Artificial Intelligence', 9),
 (10, 50, 'Advanced Python Programming', 10);
 
+
+-- Insert data into the Topic table
+INSERT INTO Topic (Top_id, Top_name)
+VALUES
+(1, 'Programming'),
+(2, 'Database'),
+(3, 'Web Development'),
+(4, 'Mobile Development'),
+(5, 'Data Analysis'),
+(6, 'Machine Learning'),
+(7, 'Networking'),
+(8, 'Cybersecurity'),
+(9, 'Cloud Computing'),
+(10, 'Artificial Intelligence');
+
 --Track_Course_Contain
 
 INSERT INTO Track_Course_Contain(C_id,T_id) 
