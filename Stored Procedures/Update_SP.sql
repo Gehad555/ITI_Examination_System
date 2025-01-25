@@ -186,9 +186,9 @@ END;
 GO
 
 -- Table: Course
-IF OBJECT_ID('UpdateCourse','P') IS NOT NULL DROP PROCEDURE UpdateCourse;
+IF OBJECT_ID('UpdateCourse_SP','P') IS NOT NULL DROP PROCEDURE UpdateCourse_SP;
 GO
-CREATE PROCEDURE UpdateCourse
+CREATE PROCEDURE UpdateCourse_SP
     @C_id INT,
     @Hours INT = NULL,
     @C_Name VARCHAR(255) = NULL,
