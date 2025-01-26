@@ -60,7 +60,7 @@ BEGIN
         WHERE Fk_CID = @CourseID AND Type = 'Choice'
         ORDER BY NEWID();
 
-        -- إدراج أسئلة الصواب والخطأ بشكل عشوائي
+ 
         INSERT INTO dbo.ExamQuestion (Ex_Id, Q_id)
         SELECT TOP (2-@TotalMCQ) @ExamID, q.Q_id
          FROM dbo.Question q join ExamQuestion eq on q.Q_id=eq.Q_id 
