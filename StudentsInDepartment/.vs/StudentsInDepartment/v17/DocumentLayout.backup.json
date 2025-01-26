@@ -1,0 +1,40 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ashrakat\\source\\repos\\StudentsInDepartment\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D39EDBC9-82E1-4C84-BAFF-3A094ABF7DE9}|StudentsInDepartment\\StudentsInDepartment.rptproj|C:\\Users\\Ashrakat\\source\\repos\\StudentsInDepartment\\StudentsInDepartment\\Report1.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{D39EDBC9-82E1-4C84-BAFF-3A094ABF7DE9}|StudentsInDepartment\\StudentsInDepartment.rptproj|solutionrelative:StudentsInDepartment\\Report1.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Report1.rdl [Design]",
+              "DocumentMoniker": "C:\\Users\\Ashrakat\\source\\repos\\StudentsInDepartment\\StudentsInDepartment\\Report1.rdl",
+              "RelativeDocumentMoniker": "StudentsInDepartment\\Report1.rdl",
+              "ToolTip": "C:\\Users\\Ashrakat\\source\\repos\\StudentsInDepartment\\StudentsInDepartment\\Report1.rdl [Design]",
+              "RelativeToolTip": "StudentsInDepartment\\Report1.rdl [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-26T12:43:36.787Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

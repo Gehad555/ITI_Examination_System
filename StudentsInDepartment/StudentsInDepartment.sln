@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "StudentsInDepartment", "StudentsInDepartment\StudentsInDepartment.rptproj", "{D39EDBC9-82E1-4C84-BAFF-3A094ABF7DE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D39EDBC9-82E1-4C84-BAFF-3A094ABF7DE9}.Debug|Default.ActiveCfg = Debug
+		{D39EDBC9-82E1-4C84-BAFF-3A094ABF7DE9}.Debug|Default.Deploy.0 = Debug
+		{D39EDBC9-82E1-4C84-BAFF-3A094ABF7DE9}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{D39EDBC9-82E1-4C84-BAFF-3A094ABF7DE9}.DebugLocal|Default.Build.0 = DebugLocal
+		{D39EDBC9-82E1-4C84-BAFF-3A094ABF7DE9}.DebugLocal|Default.Deploy.0 = DebugLocal
+		{D39EDBC9-82E1-4C84-BAFF-3A094ABF7DE9}.Release|Default.ActiveCfg = Release
+		{D39EDBC9-82E1-4C84-BAFF-3A094ABF7DE9}.Release|Default.Build.0 = Release
+		{D39EDBC9-82E1-4C84-BAFF-3A094ABF7DE9}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C258DF60-7849-42D8-ADCC-D157A9FE4E2E}
+	EndGlobalSection
+EndGlobal
