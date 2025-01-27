@@ -21,7 +21,7 @@ This project includes the following key components:
 
 ## Reports
 
-![Direct link to the reports](Reports/PDF/Report5%(3).pdf).
+![Direct link to the reports](Reports/PDF/Report5.pdf).
 
 ## Features
 
