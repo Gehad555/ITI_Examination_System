@@ -10,9 +10,9 @@ This project includes the following key components:
 
 ---
 ## Projects Description
-![Projects Description](Files/Online_Examination_System.docx)
-## ERD Diagram
+![Projects Description](Files/Online_Examination_System.pdf)
 
+## ERD Diagram
 ![ERD Diagram](Files/ERD.svg)
 
 ## Schema Diagram
@@ -21,7 +21,7 @@ This project includes the following key components:
 
 ## Reports
 
-![Direct link to the reports](Reports/PDF).
+![Direct link to the reports](Reports/PDF/Report5%(3).pdf).
 
 ## Features
 
