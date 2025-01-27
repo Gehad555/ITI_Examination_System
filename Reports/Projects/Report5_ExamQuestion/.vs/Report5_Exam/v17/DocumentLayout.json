@@ -1,0 +1,40 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\LC#\\Report5_Exam\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E880330D-08A4-4476-8568-78493E59F4D7}|Report5_Exam\\Report5_Exam.rptproj|D:\\LC#\\Report5_Exam\\Report5_Exam\\Report5.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{E880330D-08A4-4476-8568-78493E59F4D7}|Report5_Exam\\Report5_Exam.rptproj|solutionrelative:Report5_Exam\\Report5.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Report5.rdl [Design]",
+              "DocumentMoniker": "D:\\LC#\\Report5_Exam\\Report5_Exam\\Report5.rdl",
+              "RelativeDocumentMoniker": "Report5_Exam\\Report5.rdl",
+              "ToolTip": "D:\\LC#\\Report5_Exam\\Report5_Exam\\Report5.rdl [Design]",
+              "RelativeToolTip": "Report5_Exam\\Report5.rdl [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-27T16:11:57.356Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
