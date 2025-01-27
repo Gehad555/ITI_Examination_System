@@ -9,6 +9,19 @@ This project includes the following key components:
 - **Stored Procedures (SPs):** Implements core functionalities like CRUD operations, exam management, and report generation.
 
 ---
+## Projects Description
+![Projects Description](Files/Online_Examination_System.docx)
+## ERD Diagram
+
+![ERD Diagram](Files/ERD.svg)
+
+## Schema Diagram
+
+![Schema Diagram](Files/Schema.svg)
+
+## Reports
+
+![Direct link to the reports](Reports/PDF).
 
 ## Features
 
