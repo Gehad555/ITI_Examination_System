@@ -179,12 +179,14 @@ IF OBJECT_ID('InsertTopic_Sp','P') IS NOT NULL
 GO
 CREATE PROCEDURE InsertTopic_Sp
     @Top_Id INT,        
-    @TName VARCHAR(100)      
+    @TName VARCHAR(100),
+	@Fk_crs_ID INT
+
 AS
 BEGIN
     BEGIN TRY          
-        INSERT INTO Topic (Top_id, Top_name)
-        VALUES (@Top_Id, @TName);        
+        INSERT INTO Topic (Top_id, Top_name,Fk_crs_ID)
+        VALUES (@Top_Id, @TName,@Fk_crs_ID);        
         IF @@ROWCOUNT > 0
             SELECT 'Data inserted successfully into topic' AS Msg;
     END TRY

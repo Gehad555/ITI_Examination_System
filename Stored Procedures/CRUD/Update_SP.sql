@@ -219,6 +219,7 @@ GO
 CREATE PROCEDURE UpdateTopic_Sp
     @Top_Id INT,
     @TName VARCHAR(100) = NULL
+	@FK_CRS_ID INT = NULL
 AS
 BEGIN
     IF EXISTS (SELECT 1 FROM Topic WHERE Top_id = @Top_Id)
@@ -226,6 +227,7 @@ BEGIN
         BEGIN TRY
             UPDATE Topic SET
                 Top_name = COALESCE(@TName, Top_name)
+				Fk_CRS_ID = @FK_CRS_ID
             WHERE Top_id = @Top_Id;
             PRINT 'Topic updated successfully';
         END TRY
