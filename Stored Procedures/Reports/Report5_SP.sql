@@ -33,7 +33,8 @@ BEGIN
         Question Q ON EQ.Q_id = Q.Q_id
     INNER JOIN 
         Course C ON E.Fk_CID = C.C_id
-    LEFT JOIN 
+   
+   LEFT JOIN 
         Choices CH ON Q.Q_id = CH.Q_id 
     WHERE 
         E.Ex_Id = @ExamID

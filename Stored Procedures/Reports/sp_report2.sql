@@ -1,6 +1,4 @@
---	Report that takes the student ID and returns the grades of the
---  student in all courses.
-exec  GetStudentGradesAllCoures_SP 1
+
 IF OBJECT_ID('GetStudentGradesAllCoures_SP', 'P') IS NOT NULL
     DROP PROCEDURE GetStudentGradesAllCoures_SP;
 GO
