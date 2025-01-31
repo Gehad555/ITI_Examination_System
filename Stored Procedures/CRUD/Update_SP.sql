@@ -218,26 +218,30 @@ IF OBJECT_ID('UpdateTopic_Sp','P') IS NOT NULL DROP PROCEDURE UpdateTopic_Sp;
 GO
 CREATE PROCEDURE UpdateTopic_Sp
     @Top_Id INT,
-    @TName VARCHAR(100) = NULL
-	@FK_CRS_ID INT = NULL
+    @TName VARCHAR(100) = NULL,
+    @FK_CRS_ID INT = NULL
 AS
 BEGIN
     IF EXISTS (SELECT 1 FROM Topic WHERE Top_id = @Top_Id)
     BEGIN
         BEGIN TRY
-            UPDATE Topic SET
-                Top_name = COALESCE(@TName, Top_name)
-				Fk_CRS_ID = @FK_CRS_ID
+            UPDATE Topic 
+            SET 
+                Top_name = COALESCE(@TName, Top_name),
+                Fk_crs_id = COALESCE(@FK_CRS_ID, Fk_crs_id)
             WHERE Top_id = @Top_Id;
+            
             PRINT 'Topic updated successfully';
         END TRY
         BEGIN CATCH
             PRINT 'Error updating topic: ' + ERROR_MESSAGE();
         END CATCH
     END
-    ELSE PRINT 'Topic not found';
+    ELSE 
+        PRINT 'Topic not found';
 END;
 GO
+
 
 -- Table: Student
 IF OBJECT_ID('UpdateStudent_Sp','P') IS NOT NULL DROP PROCEDURE UpdateStudent_Sp;

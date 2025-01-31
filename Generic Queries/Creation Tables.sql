@@ -103,9 +103,14 @@ IF OBJECT_ID('Topic', 'U') IS NOT NULL
     DROP TABLE Topic;
 CREATE TABLE Topic (
     Top_id INT PRIMARY KEY,
-    Top_name VARCHAR(20)
+    Top_name VARCHAR(100),  
+    Fk_crs_id INT NULL,
+    CONSTRAINT cTopic FOREIGN KEY (Fk_crs_id) REFERENCES Course(C_id)
 );
+GO
 
+
+ALTER TABLE Topic ALTER COLUMN Top_name VARCHAR(100);
 -- Table title: Track_Course_Contain
 -- Table Purpose: Represents the many-to-many relationship between Track and Course tables.
 IF OBJECT_ID('Track_Course_Contain', 'U') IS NOT NULL

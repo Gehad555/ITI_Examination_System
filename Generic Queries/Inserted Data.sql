@@ -484,3 +484,55 @@ VALUES
 (10, 2, 'Five'),
 (10, 3, 'Six'),
 (10, 4, 'Eight');
+
+
+INSERT INTO Topic (Top_id, Top_name, Fk_crs_id) VALUES
+-- Course ID 1: C# Programming
+(1, 'C# Fundamentals', 1),
+(2, 'C# Object-Oriented Programming', 1),
+(3, 'C# Advanced Topics', 1),
+
+-- Course ID 2: CSS
+(4, 'CSS Basics', 2),
+(5, 'CSS Flexbox & Grid', 2),
+(6, 'CSS Animations & Transitions', 2),
+
+-- Course ID 3: HTML
+(7, 'HTML Elements', 3),
+(8, 'HTML Forms & Tables', 3),
+(9, 'HTML5 Features', 3),
+
+-- Course ID 4: JavaScript
+(10, 'JavaScript Basics', 4),
+(11, 'JavaScript ES6+', 4),
+(12, 'JavaScript DOM Manipulation', 4),
+
+-- Course ID 5: Machine Learning
+(13, 'Supervised Learning', 5),
+(14, 'Unsupervised Learning', 5),
+(15, 'Neural Networks', 5),
+
+-- Course ID 6: Cybersecurity
+(16, 'Network Security', 6),
+(17, 'Ethical Hacking', 6),
+(18, 'Cryptography Basics', 6),
+
+-- Course ID 7: Cloud Computing
+(19, 'Cloud Architecture', 7),
+(20, 'AWS Basics', 7),
+(21, 'Google Cloud Platform', 7),
+
+-- Course ID 8: Mobile App Development
+(22, 'Android Development', 8),
+(23, 'iOS Development', 8),
+(24, 'Cross-Platform Development', 8),
+
+-- Course ID 9: Artificial Intelligence
+(25, 'AI Fundamentals', 9),
+(26, 'Computer Vision', 9),
+(27, 'Natural Language Processing', 9),
+
+-- Course ID 10: Python Programming
+(28, 'Python Basics', 10),
+(29, 'Python for Data Science', 10),
+(30, 'Advanced Python Techniques', 10);
